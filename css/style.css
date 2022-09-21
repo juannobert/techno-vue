@@ -40,4 +40,78 @@ body{
 }
 
 /* Modal */
+.modal::before{
+    content: "";
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    top : 0;
+    left: 0;
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top : 0;
+    left : 0;
+    width: 100%;
+    padding: 80px;
+}
 
+.modal_container{
+    position: relative;
+    background: #fff;
+    z-index: 1;
+    display: grid;
+    align-items: end;
+    gap: 50px;
+    padding: 50px 50px 50px 0;
+    background: linear-gradient(to right,transparent 250px, #fff 250px);
+
+}
+
+.modal_img{
+
+    grid-column: 1;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.modal_img img{
+    max-width: 300px;
+    display: block;
+}
+.modal_info{
+    grid-column: 2;
+    max-width: 600px;
+}
+.modal_btn{
+    margin-top: 80px;
+    background-color: #000;
+    cursor: pointer;
+    color : #fff;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 25px;
+    font-family: 'Noto Serif';
+    border-radius: 5px;
+}
+
+.modal_btn:active{
+    background: #808080;
+}
+
+.avaliacoes{
+    grid-column: 2;
+}
+
+.avaliacao{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+.avaliacao_usuario{
+    font-weight: bold;
+}
+.avalicoes_titulo{
+    font-size: 1.75rem;
+}

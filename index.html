@@ -30,8 +30,8 @@
                 <div class="avaliacoes">
                     <h2 class="avalicoes_titulo">Avaliações:</h2>
                     <ul>
-                        <li v-for="avaliacao in produto.avaliacoes">
-                            <p>{{avaliacao.nome}} | {{avaliacao.estrelas}} estrelas</p>
+                        <li v-for="avaliacao in produto.avaliacoes" class="avaliacao">
+                            <p class="avaliacao_usuario">{{avaliacao.nome}} | {{avaliacao.estrelas}} estrelas</p>
                             <p class="avaliacao_descricao">{{avaliacao.descricao}}</p>
                         </li>
                     </ul>
@@ -48,6 +48,7 @@
             </div>
         </div>
        </section>
+
     </div>
 
     <script src="app.js"></script>
