@@ -1,7 +1,8 @@
 const vue = new Vue({
     el: "#app",
     data : {
-        produtos : []
+        produtos : [],
+        produto : false
     },
     filters:{
         numPreco(valor){
@@ -13,6 +14,11 @@ const vue = new Vue({
             let response = await fetch("./api/produtos.json")
             let json = await response.json()
             this.produtos = json;
+        },
+        async buscarPorId(id){
+            let response = await fetch(`./api/produtos/${id}/dados.json`)
+            let json = await response.json()
+            this.produto = json;
         }
     },
     created(){

@@ -15,15 +15,19 @@
 </head>
 <body>
     <div id="app">
+
+        <section class="modal">
+            {{produto}}
+
+        </section>
        <section class="produtos">
-        <div class="produto" v-for="produto in produtos" :key="produto.id">
-            <img :src="produto.img" class="produto_img"/>
+        <div class="produto" v-for="item in produtos" :key="item.id" @click="buscarPorId(item.id)">
+            <img :src="item.img" class="produto_img"/>
             <div class="produto_info">
-                <span class="produto_preco">{{produto.preco | numPreco}}</span>
-                <h2 class="produto_nome">{{produto.nome}}</h2>
+                <span class="produto_preco">{{item.preco | numPreco}}</span>
+                <h2 class="produto_nome">{{item.nome}}</h2>
             </div>
         </div>
-
        </section>
     </div>
 
