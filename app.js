@@ -3,6 +3,11 @@ const vue = new Vue({
     data : {
         produtos : []
     },
+    filters:{
+        numPreco(valor){
+            return valor.toLocaleString("pt-BR", {style:"currency", currency : "BRL"})
+        }
+    },
     methods:{
         async listarProdutos(){
             let response = await fetch("./api/produtos.json")
