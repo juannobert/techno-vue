@@ -53,6 +53,8 @@ body{
     align-items: center;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
+    background: #fff;
+    
 }
 
 .produto_img{
@@ -122,6 +124,7 @@ body{
 .modal_info{
     grid-column: 2;
     max-width: 600px;
+    
 }
 
 .modal_fechar{
@@ -293,4 +296,56 @@ body{
     width: 40px;
     height: 40px;
     cursor: pointer;
+}
+
+
+/* RESPONSIVO */
+
+/*Abaixo de 900px */
+@media screen and (max-width: 900px){
+    #app{
+        padding: 0 10px;
+    }
+    .produtos{
+        margin-top: 40px;
+    }
+    .produto{
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 300px;
+        margin: 30px auto;
+    }
+    .produto_info{
+        padding: 20px;
+    }
+    .produto_nome{
+        font-size: 1.5rem;
+    }
+
+    .modal{
+        padding: 10px;
+    }
+    .modal_container{
+        gap: 20px;
+        background: #fff;
+        padding: 10px;
+    }
+    .modal_img{
+        max-width: 100%;
+        grid-row: 2;
+    }
+    .modal_img img{
+        width: 100%;
+        max-width: initial;
+        p
+    }
+    .modal_info{
+        grid-column: 1;
+    }
+    .avaliacoes{
+        grid-column: 1;
+    }
+    .modal_btn{
+        margin-top: 30px;
+    }
 }
