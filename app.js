@@ -5,7 +5,8 @@ const vue = new Vue({
         produto : false,
         carrinho : [],
         mensagemAlerta : "Mensagem adicionada",
-        alertaAtivo : false
+        alertaAtivo : false,
+        carrinhoAtivo : false
     },
     filters:{
         numPreco(valor){
@@ -63,6 +64,9 @@ const vue = new Vue({
            if(target === currentTarget) this.produto = false
 
         },
+        fecharCarrinho({target,currentTarget}){
+            if(target === currentTarget) this.carrinhoAtivo = false
+        },
         adicionarItem(){
             this.produto.estoque--;
             const {id,nome,preco} = this.produto; //Desestruturando produto
@@ -86,7 +90,8 @@ const vue = new Vue({
             },1500)
         },
         router(){
-            const hash = document.location.hash
+            const hash = document.location.hash // Pega o hash da URL
+            // => #smartphone
             if(hash){
                 this.abrirModal(hash.replace("#",""))
             }
