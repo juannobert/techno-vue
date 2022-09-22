@@ -236,6 +236,7 @@ body{
     width: 800px;
     background: #fff;
     padding: 40px;
+    width: 100%;
     max-width: 880px;
     animation: fadeDown .3s forwards;
 }
@@ -243,6 +244,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 50px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
 }
 .carrinho_titulo{
     margin-bottom: 10px;
@@ -254,5 +256,41 @@ body{
     border: none;
     background: none;
     font-size: 1rem;
+    cursor: pointer;
+}
+
+.carrinho_preco{
+    text-align: right;
+}
+.carrinho_total{
+    text-align: right;
+    padding: 20px 50px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #000 ;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.carrinho_finalizar{
+    display: block;
+    margin-left: auto;
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Noto Serif';
+}
+
+.carrinho_fechar{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #fff;
+    font-size: 1rem;
+    color: #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
 }
