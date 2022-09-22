@@ -23,6 +23,12 @@ const vue = new Vue({
         }
 
     },
+    watch:{
+        carrinho(){
+            //JSON.stringify: Connveter objeto para string
+            window.localStorage.carrinho = JSON.stringify(this.carrinho)//Salvando no local storage
+        }
+    },
     methods:{
         async listarProdutos(){
             let response = await fetch("./api/produtos.json")
@@ -56,9 +62,17 @@ const vue = new Vue({
         },
         removerItem(index){
             this.carrinho.splice(index,1) //Recebe posição e qtd de elementos a remover
+        },
+        checarLocalStorage(){
+            //JSON.parse Transforma o valor recebido para o tipo inicial, no caso um array
+            if(window.localStorage.carrinho) 
+                this.carrinho = JSON.parse(window.localStorage.carrinho)
+
         }
+
     },
     created(){
         this.listarProdutos()
+        this.checarLocalStorage()
     }
 })
