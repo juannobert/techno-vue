@@ -3,7 +3,8 @@ const vue = new Vue({
     data : {
         produtos : [],
         produto : false,
-        carrinho : []
+        carrinho : [],
+        mensagemAlerta : "Mensagem adicionada"
     },
     filters:{
         numPreco(valor){

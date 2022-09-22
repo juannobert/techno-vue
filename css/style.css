@@ -170,3 +170,25 @@ body{
 .avalicoes_titulo{
     font-size: 1.75rem;
 }
+
+
+/* Alerta */
+.alerta{
+    position: absolute;
+    top : 20px;
+    left : 0;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+
+
+}
+.alerta_mensagem{
+   display: inline-block;
+   background-color: #fff;
+   padding: 20px 40px;
+   border: 2px solid black;
+   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+    
+}
