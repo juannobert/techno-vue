@@ -173,6 +173,21 @@ body{
 
 
 /* Alerta */
+@keyframes fadeDown{
+    from {
+        opacity: 0;
+        transform  : translate3d(0,-30px,0);
+    }to{
+        opacity: 1;
+        transform: translate3d(0px,0,0);
+    }
+}
+.alerta.ativo{
+    display: block;
+    animation: fadeDown .3s forwards;
+
+}
+
 .alerta{
     position: absolute;
     top : 20px;
@@ -180,6 +195,7 @@ body{
     z-index: 10;
     width: 100%;
     text-align: center;
+    display: none;
 
 
 }
@@ -189,6 +205,4 @@ body{
    padding: 20px 40px;
    border: 2px solid black;
    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.2);
-
-    
 }

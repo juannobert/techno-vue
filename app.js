@@ -4,7 +4,8 @@ const vue = new Vue({
         produtos : [],
         produto : false,
         carrinho : [],
-        mensagemAlerta : "Mensagem adicionada"
+        mensagemAlerta : "Mensagem adicionada",
+        alertaAtivo : false
     },
     filters:{
         numPreco(valor){
@@ -60,6 +61,7 @@ const vue = new Vue({
             this.produto.estoque--;
             const {id,nome,preco} = this.produto; //Desestruturando produto
             this.carrinho.push({id,nome,preco})//Adiciona id,nome e preço em forma de objeto
+            this.alerta(`${nome} adicionado ao carrinho`)
         },
         removerItem(index){
             this.carrinho.splice(index,1) //Recebe posição e qtd de elementos a remover
@@ -69,6 +71,13 @@ const vue = new Vue({
             if(window.localStorage.carrinho) 
                 this.carrinho = JSON.parse(window.localStorage.carrinho)
 
+        },
+        alerta(mensagem){
+            this.mensagemAlerta = mensagem;
+            this.alertaAtivo = true;
+            setTimeout(() =>{
+                this.alertaAtivo = false
+            },1500)
         }
 
     },
