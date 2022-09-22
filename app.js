@@ -36,6 +36,7 @@ const vue = new Vue({
             document.title = this.produto.nome || "Techno"
             const hash = this.produto.id || ""
             history.pushState(null,null,`#${hash}`) //Altera hash da URL
+            if(this.produto) this.compararEstoque()
         }
     },
     methods:{
@@ -63,6 +64,10 @@ const vue = new Vue({
             */
            if(target === currentTarget) this.produto = false
 
+        },
+        compararEstoque(){
+            const itens = this.carrinho.filter(({id}) => id === this.produto.id) //Lista quantas vezes um item está no carrinho
+            this.produto.estoque -= itens.length
         },
         fecharCarrinho({target,currentTarget}){
             if(target === currentTarget) this.carrinhoAtivo = false
