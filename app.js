@@ -26,9 +26,15 @@ const vue = new Vue({
 
     },
     watch:{
+        
         carrinho(){
             //JSON.stringify: Connveter objeto para string
             window.localStorage.carrinho = JSON.stringify(this.carrinho)//Salvando no local storage
+        },
+        produto(){
+            document.title = this.produto.nome || "Techno"
+            const hash = this.produto.id || ""
+            history.pushState(null,null,`#${hash}`) //Altera hash da URL
         }
     },
     methods:{
@@ -78,11 +84,18 @@ const vue = new Vue({
             setTimeout(() =>{
                 this.alertaAtivo = false
             },1500)
+        },
+        router(){
+            const hash = document.location.hash
+            if(hash){
+                this.abrirModal(hash.replace("#",""))
+            }
         }
 
     },
     created(){
         this.listarProdutos()
         this.checarLocalStorage()
+        this.router()
     }
 })
